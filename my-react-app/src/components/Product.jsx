@@ -13,20 +13,7 @@ export default function Product() {
     fetchProduct();
   }, []);
 
-// return (
-//     <div>
-//       <h3>Welcome {user.name}! </h3>
-//       Product List
-//       <ul>
-//         {product && product.map((value) => (
-//           <li key={value.name}>
-//             {value.name} - ₹{value.price}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
+
 
    return (
     <div>
