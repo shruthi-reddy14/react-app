@@ -5,9 +5,10 @@ import axios from "axios";
 export default function Product() {
   const { user } = useContext(AppContext);
   const [product, setProduct] = useState([]);
+  const API = import.meta.env.VITE_API_URL;
   const fetchProduct = async () => {
-    const res = await axios.get("http://localhost:8080/product");
-    setProduct(res.data);
+    const res = await axios.get(`${API}/product`);
+    setProduct(res.data.data);
   };
   useEffect(() => {
     fetchProduct();
@@ -19,7 +20,7 @@ export default function Product() {
     <div>
       <h3>Welcome {user.name}! </h3>
     Product List
-       {product && product.map((value) => <li>{value.name}-{value.price}</li>)}
+       {product && product.map((value) => <li>{value.name}-${value.price}</li>)}
      </div>
    );
  }
